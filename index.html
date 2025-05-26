@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#0068b5">
+  <meta name="description" content="Explore Intel’s sustainability journey and milestones in an accessible, responsive timeline format.">
+  <title>Intel Sustainability Timeline</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #e0f7fa 0%, #fff 100%);
+      margin: 0;
+      padding: 0;
+      color: #222;
+      min-height: 100vh;
+    }
+    header {
+      background: #0068b5;
+      color: #fff;
+      padding: 2rem 1rem 1rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 12px #0068b522;
+    }
+    header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.2rem;
+      letter-spacing: 0.03em;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    .timeline {
+      max-width: 100vw;
+      margin: 3rem auto 0 auto;
+      padding: 2rem 1rem 3rem 1rem;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: center;
+      overflow-x: auto;
+      overflow-y: visible;
+      min-height: 340px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #b2ebf2;
+      z-index: 0;
+      transform: translateY(-50%);
+    }
+    .event {
+      position: relative;
+      min-width: 220px;
+      max-width: 260px;
+      margin: 0 2.5rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #0068b522;
+      padding: 1.5rem 1rem 1.2rem 1rem;
+      box-sizing: border-box;
+      z-index: 1;
+      outline: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: 0;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .event:focus, .event:hover {
+      box-shadow: 0 0 0 3px #0068b5, 0 8px 32px #0068b544;
+      background: #e3f2fd;
+      transform: scale(1.04) translateY(-8px);
+    }
+    .event .year {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #0068b5;
+      margin-bottom: 0.3rem;
+    }
+    .event .goal {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+      text-align: center;
+    }
+    .event .desc {
+      font-size: 1rem;
+      color: #444;
+      opacity: 0.85;
+      text-align: center;
+    }
+    .event img {
+      margin-bottom: 8px;
+    }
+    /* Remove left/right alternation for horizontal */
+    .event.left, .event.right {
+      left: unset;
+      text-align: center;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .timeline {
+        padding: 2rem 0.5rem 3rem 0.5rem;
+      }
+      .event {
+        min-width: 180px;
+        max-width: 220px;
+        margin: 0 1.2rem;
+      }
+    }
+    @media (max-width: 700px) {
+      .timeline {
+        flex-direction: row;
+        align-items: flex-end;
+        min-height: 260px;
+      }
+      .event {
+        min-width: 140px;
+        max-width: 180px;
+        padding: 1rem 0.5rem 1rem 0.5rem;
+      }
+      .event .year {
+        font-size: 1.1rem;
+      }
+      .event .goal {
+        font-size: 1rem;
+      }
+      .event .desc {
+        font-size: 0.95rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .timeline {
+        padding: 1rem 0.2rem 2rem 0.2rem;
+      }
+      .event {
+        min-width: 120px;
+        max-width: 140px;
+        padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+      }
+      .event .desc {
+        font-size: 0.9rem;
+      }
+    }
+    /* Accessibility: high contrast for focus, readable font sizes, and good color contrast */
+    .event:focus-visible {
+      outline: 3px solid #0068b5;
+      outline-offset: 2px;
+    }
+    /* Ensure Intel logo is fully opaque */
+    header img[alt="Intel Logo"] {
+      opacity: 1 !important;
+      filter: none !important;
+    }
+    /* Ensure timeline event images are fully opaque */
+    .timeline .event img {
+      opacity: 1 !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Intel’s Sustainability Journey</h1>
+    <img src="intel-logo.png" alt="Intel Logo" style="width:120px; margin: 18px auto 10px auto; display:block;">
+    <p>Explore Intel’s key sustainability goals and milestones on our path to a greener future.</p>
+  </header>
+  <main>
+    <div class="timeline">
+      <div class="event" tabindex="0">
+        <div class="year">1968</div>
+        <div class="goal">Intel Founded</div>
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80" alt="Founding Team" style="width:80px; height:60px; object-fit:cover; margin-bottom:8px; border-radius:8px;">
+        <div class="desc">Intel is founded in Mountain View, California. From the beginning, Intel focused on innovation and responsible manufacturing practices.</div>
+      </div>
+      <div class="event" tabindex="0">
+        <div class="year">1994</div>
+        <div class="goal">First Environmental Report</div>
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" alt="Environmental Report" style="width:80px; height:60px; object-fit:cover; margin-bottom:8px; border-radius:8px;">
+        <div class="desc">Intel publishes its first environmental, health, and safety report, demonstrating a commitment to transparency and sustainability.</div>
+      </div>
+      <div class="event" tabindex="0">
+        <div class="year">2003</div>
+        <div class="goal">Green Power Leadership Award</div>
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=200&q=80" alt="Green Power Award" style="width:80px; height:60px; object-fit:cover; margin-bottom:8px; border-radius:8px;">
+        <div class="desc">Intel receives the EPA Green Power Leadership Award for its early adoption of renewable energy in its operations.</div>
+      </div>
+      <div class="event" tabindex="0">
+        <div class="year">2008</div>
+        <div class="goal">Largest Voluntary Purchaser of Green Power</div>
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=200&q=80" alt="Solar Panels" style="width:80px; height:60px; object-fit:cover; margin-bottom:8px; border-radius:8px;">
+        <div class="desc">Intel becomes the largest voluntary purchaser of green power in the U.S., supporting the growth of renewable energy markets.</div>
+      </div>
+      <div class="event" tabindex="0">
+        <div class="year">2012</div>
+        <div class="goal">Water Conservation Milestone</div>
+        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=200&q=80" alt="Water Conservation" style="width:80px; height:60px; object-fit:cover; margin-bottom:8px; border-radius:8px;">
+        <div class="desc">Intel achieves a milestone in water conservation, saving billions of gallons of water through efficiency projects.</div>
+      </div>
+      <div class="event" tabindex="0">
+        <div class="year">2022</div>
+        <div class="goal">100% Renewable Electricity</div>
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80" alt="Renewable Electricity" style="width:80px; height:60px; object-fit:cover; margin-bottom:8px; border-radius:8px;">
+        <div class="desc">Intel achieved 100% renewable electricity use in its global operations, reducing its carbon footprint and supporting clean energy initiatives.</div>
+      </div>
+      <div class="event" tabindex="0">
+        <div class="year">2030</div>
+        <div class="goal">Net Positive Water Use</div>
+        <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=200&q=80" alt="Water Restoration" style="width:80px; height:60px; object-fit:cover; margin-bottom:8px; border-radius:8px;">
+        <div class="desc">Intel aims to restore more freshwater than it consumes, supporting water conservation projects in local communities.</div>
+      </div>
+      <div class="event" tabindex="0">
+        <div class="year">2030</div>
+        <div class="goal">Zero Waste to Landfill</div>
+        <img src="landfill-cleaning.jpg" alt="Zero Waste" style="width:80px; height:60px; object-fit:cover; margin-bottom:8px; border-radius:8px;">
+        <div class="desc">Intel is working to send zero waste from its global manufacturing operations to landfill by 2030.</div>
+      </div>
+      <div class="event" tabindex="0">
+        <div class="year">2040</div>
+        <div class="goal">Net-Zero Greenhouse Gas Emissions</div>
+        <img src="clean-air.jpg" alt="Net Zero Emissions" style="width:80px; height:60px; object-fit:cover; margin-bottom:8px; border-radius:8px;">
+        <div class="desc">Intel’s goal is to achieve net-zero greenhouse gas emissions across its global operations by 2040.</div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
